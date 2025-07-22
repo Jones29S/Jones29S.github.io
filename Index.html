@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DATA WITH F&F - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom CSS for variables and default styles */
+        :root {
+            --primary-bg-color: #1a202c; /* Dark background */
+            --secondary-bg-color: #2d3748; /* Slightly lighter dark */
+            --text-color: #e2e8f0; /* Light gray text */
+            --accent-color: #63b3ed; /* Blue accent */
+            --font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--primary-bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        /* Smooth scrolling for navigation */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Custom styles for buttons and forms */
+        .btn-primary {
+            @apply bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out;
+        }
+
+        .input-field {
+            @apply w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500;
+        }
+
+        /* Styles for project cards */
+        .project-card {
+            @apply bg-gray-800 rounded-lg shadow-lg overflow-hidden flex flex-col;
+        }
+
+        .project-card-image-container {
+            @apply w-full h-48 object-cover flex items-center justify-center; /* Fixed height for image/video preview */
+        }
+        .project-card-image-container svg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures SVG covers the area */
+        }
+
+        .project-card-content {
+            @apply p-6 flex-grow;
+        }
+
+        .project-card h3 {
+            @apply text-xl font-semibold text-blue-300 mb-2;
+        }
+
+        .project-card p {
+            @apply text-gray-300 text-sm;
+        }
+
+        /* Responsive video embedding */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 0.5rem; /* rounded-lg */
+        }
+
+        .video-container iframe,
+        .video-container object,
+        .video-container embed {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Profile picture container styling */
+        .profile-picture-container {
+            @apply rounded-full w-48 h-48 flex items-center justify-center mx-auto shadow-lg overflow-hidden;
+        }
+        .profile-picture-container svg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures SVG covers the area */
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100">
+
+    <svg width="100%" height="100vh" viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg" style="position:fixed;top:0;left:0;z-index:-1;">
+      <defs>
+        <linearGradient id="bg-gradient" x1="0" y1="0" x2="1440" y2="900" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#e0e7ff"/>
+          <stop offset="1" stop-color="#f8fafc"/>
+        </linearGradient>
+      </defs>
+      <rect width="1440" height="900" fill="url(#bg-gradient)"/>
+      <polyline points="100,700 300,400 500,600 700,350 900,500 1100,250 1300,400" fill="none" stroke="#60a5fa" stroke-width="4" opacity="0.2"/>
+      <polyline points="100,800 350,500 600,650 850,300 1200,550 1350,350" fill="none" stroke="#818cf8" stroke-width="3" opacity="0.15"/>
+      <circle cx="300" cy="400" r="10" fill="#60a5fa" opacity="0.3"/>
+      <circle cx="700" cy="350" r="10" fill="#818cf8" opacity="0.3"/>
+      <circle cx="1100" cy="250" r="10" fill="#60a5fa" opacity="0.3"/>
+      <text x="50%" y="20%" text-anchor="middle" fill="#1e293b" font-size="54" font-family="Segoe UI, Arial, sans-serif" font-weight="bold" opacity="0.85">
+        F&amp;F
+      </text>
+      <text x="50%" y="27%" text-anchor="middle" fill="#475569" font-size="28" font-family="Segoe UI, Arial, sans-serif" opacity="0.7">
+        Data Analysis Portfolio
+      </text>
+      <text x="50%" y="33%" text-anchor="middle" fill="#64748b" font-size="20" font-family="Segoe UI, Arial, sans-serif" opacity="0.5">
+        Introducing the site and showcasing data-driven insights
+      </text>
+    </svg>
+
+    <header class="bg-gray-800 shadow-md py-4 sticky top-0 z-50">
+        <div class="container flex justify-between items-center">
+            <h1 class="text-3xl font-bold text-blue-400">DATA WITH F&F</h1>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="#home" class="hover:text-blue-400 transition duration-300">Home</a></li>
+                    <li><a href="#projects" class="hover:text-blue-400 transition duration-300">Projects</a></li>
+                    <li><a href="#about" class="hover:text-blue-400 transition duration-300">About Me</a></li>
+                    <li><a href="#services" class="hover:text-blue-400 transition duration-300">Services</a></li>
+                    <li><a href="#contact" class="hover:text-blue-400 transition duration-300">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="h-screen flex items-center justify-center">
+        <div class="text-center bg-black bg-opacity-60 p-10 rounded-lg shadow-xl z-10">
+            <a href="#projects" class="btn-primary text-lg">View My Work</a>
+        </div>
+    </section>
+
+    <section id="about" class="py-16 bg-gray-800">
+        <div class="container">
+            <h2 class="text-4xl font-bold text-center text-blue-400 mb-10">About Me</h2>
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="md:w-1/3">
+                    <div class="profile-picture-container">
+                        <svg width="340" height="120" viewBox="0 0 340 120" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="bg6" x1="0" y1="0" x2="340" y2="120" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#2e003e"/>
+                                    <stop offset="1" stop-color="#ffd200"/>
+                                </linearGradient>
+                            </defs>
+                            <rect width="340" height="120" fill="url(#bg6)"/>
+                            <rect x="10" y="20" width="320" height="80" rx="30" fill="#fff2" stroke="#fff" stroke-width="3"/>
+                            <text x="170" y="65" font-size="24" font-family="monospace" fill="#fff" text-anchor="middle" font-weight="bold">Welcome to</text>
+                            <text x="170" y="100" font-size="22" font-family="monospace" fill="#ffd200" text-anchor="middle" font-weight="bold">Data With F&F</text>
+                        </svg>
+                    </div>
+                </div>
+                <div class="md:w-2/3 text-lg text-gray-300">
+                    <p class="mb-4">Hello! I'm Steaffon Jones, the founder of DATA WITH F&F—a data analytics and systems consulting brand built on precision, clarity, and impact. I specialize in healthcare systems implementation, AI-powered analytics, and operational process design. My passion lies in turning complex datasets into meaningful stories, building tools that drive smarter decisions, and empowering organizations through streamlined digital solutions.</p>
+                    <p class="mb-4">This portfolio site was engineered using Visual Studio Code, my trusted development environment. Leveraging VS Code’s robust toolset—alongside HTML, CSS (Tailwind), and custom JavaScript—I crafted this space to reflect both technical skill and user-centered design. It’s a live example of how well-curated technology stacks can showcase practical problem-solving and clean execution.</p>
+                    <p class="mb-4">Whether it’s optimizing Epic and Cerner workflows, building predictive dashboards in Power BI, or translating raw data into actionable insights, I’m committed to delivering results that matter. I continuously expand my toolkit with cutting-edge technologies, including AI and automation, to stay ahead in an evolving industry.</p>
+                    <p>Let’s connect—and see how DATA WITH F&F can support your goals through smart strategy and intentional design.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-16 bg-gray-900">
+        <div class="container">
+            <h2 class="text-4xl font-bold text-center text-blue-400 mb-10">My Projects</h2>
+            <p class="text-center text-gray-300 mb-8">Here you can showcase your projects. To add a new project, simply copy and paste one of the `project-card` blocks below, fill in your details, and add your image/video.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="project-card">
+                    <div class="project-card-image-container">
+                        <svg width="320" height="180" viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="bg1" x1="0" y1="0" x2="320" y2="180" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#2e003e"/>
+                                    <stop offset="1" stop-color="#00c3ff"/>
+                                </linearGradient>
+                            </defs>
+                            <rect width="320" height="180" fill="url(#bg1)"/>
+                            <ellipse cx="160" cy="90" rx="90" ry="60" fill="#fff8" />
+                            <rect x="110" y="60" width="100" height="60" rx="30" fill="#ff2d55" stroke="#fff" stroke-width="4"/>
+                            <text x="160" y="110" font-size="22" font-family="monospace" fill="#fff" text-anchor="middle" font-weight="bold">Diabetes</text>
+                            <text x="160" y="135" font-size="14" font-family="monospace" fill="#fff" text-anchor="middle">Prediction</text>
+                            <circle cx="210" cy="90" r="10" fill="#fff" stroke="#00c3ff" stroke-width="3"/>
+                            <rect x="200" y="100" width="20" height="8" rx="4" fill="#fff" stroke="#00c3ff" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="project-card-content">
+                        <h3>Diabetes Prediction with Logistic Regression</h3>
+                        <p class="description-box">This project applies logistic regression to predict the likelihood of diabetes based on health indicators such as glucose level, BMI, age, blood pressure, and exercise frequency. The model was developed in Python and evaluated for accuracy.</p>
+                        <ul class="list-disc list-inside text-gray-400 text-sm mt-2 mb-4">
+                            <li><strong>Model Type:</strong> Logistic Regression (Binary Classification)</li>
+                            <li><strong>Dataset:</strong> 80 records of anonymized health data</li>
+                            <li><strong>Target Variable:</strong> Diabetes (0 = No, 1 = Yes)</li>
+                            <li><strong>Key Findings:</strong>
+                                <ul class="list-circle list-inside ml-4">
+                                    <li>Glucose Level is the strongest predictor of diabetes.</li>
+                                    <li>BMI and Age also show strong positive correlations.</li>
+                                    <li>Exercise Frequency has a protective effect (negative correlation).</li>
+                                    <li>Blood Pressure has a moderate influence.</li>
+                                    <li>Individuals with glucose levels > 140 mg/dL show significantly higher risk.</li>
+                                    <li>BMI > 30 (obese range) correlates with increased diabetes risk.</li>
+                                    <li>People who exercise 3+ times/week show lower risk.</li>
+                                    <li>The combination of high BMI and high glucose is particularly predictive.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <a href="https://github.com/Jones29S/Diabetes-Health-Project-with-ML.git" target="_blank" class="text-blue-400 hover:underline mt-4 inline-block">View Project on GitHub</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-card-image-container">
+                        <svg width="320" height="180" viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="bg2" x1="0" y1="0" x2="320" y2="180" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#1a2980"/>
+                                    <stop offset="1" stop-color="#26d0ce"/>
+                                </linearGradient>
+                            </defs>
+                            <rect width="320" height="180" fill="url(#bg2)"/>
+                            <rect x="60" y="40" width="200" height="100" rx="20" fill="#222" stroke="#fff" stroke-width="3"/>
+                            <g>
+                                <circle cx="90" cy="90" r="18" fill="#ffeb3b"/>
+                                <circle cx="160" cy="90" r="18" fill="#00e676"/>
+                                <circle cx="230" cy="90" r="18" fill="#ff3d00"/>
+                                <line x1="108" y1="90" x2="142" y2="90" stroke="#fff" stroke-width="2"/>
+                                <line x1="178" y1="90" x2="212" y2="90" stroke="#fff" stroke-width="2"/>
+                            </g>
+                            <text x="160" y="155" font-size="20" font-family="monospace" fill="#fff" text-anchor="middle" font-weight="bold">Machine Learning</text>
+                        </svg>
+                    </div>
+                    <div class="project-card-content">
+                        <h3>House Price Prediction with Linear Regression</h3>
+                        <p class="description-box">This project demonstrates how linear regression can be used to predict house prices using a structured dataset of residential properties. The analysis was conducted using Python for model training and evaluation. The goal was to understand which features most influence house prices and how accurately I can predict them.</p>
+                        <a href="https://github.com/Jones29S/1Machine-Learning-Customer-Data-Analysis.git" target="_blank" class="text-blue-400 hover:underline mt-4 inline-block">View Project on GitHub</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-card-image-container">
+                        <svg width="320" height="180" viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="bg4" x1="0" y1="0" x2="320" y2="180" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#f7971e"/>
+                                    <stop offset="1" stop-color="#ffd200"/>
+                                </linearGradient>
+                            </defs>
+                            <rect width="320" height="180" fill="url(#bg4)"/>
+                            <g>
+                                <rect x="80" y="50" width="24" height="80" rx="6" fill="#222"/>
+                                <rect x="120" y="70" width="24" height="60" rx="6" fill="#222"/>
+                                <rect x="160" y="90" width="24" height="40" rx="6" fill="#222"/>
+                                <rect x="200" y="110" width="24" height="20" rx="6" fill="#222"/>
+                            </g>
+                            <text x="160" y="35" font-size="22" font-family="monospace" fill="#222" text-anchor="middle" font-weight="bold">Power BI</text>
+                        </svg>
+                    </div>
+                    <div class="project-card-content">
+                        <h3>Employee Salary Data Analysis (Power BI Dashboard)</h3>
+                        <p class="description-box">This Power BI project was completed as part of my Data Analytics certification. The objective was to analyze and visualize employee salary data to uncover key performance indicators (KPIs) and workforce trends. I cleaned and transformed the dataset using Power Query, created calculated columns, and built an interactive dashboard featuring KPIs such as average salary by department, top job titles by compensation, and employee distribution. The dashboard includes slicers for dynamic filtering and visual storytelling, enabling users to explore salary trends, departmental structures, and hiring patterns.</p>
+                        <ul class="list-disc list-inside text-gray-400 text-sm mt-2 mb-4">
+                            <li><strong>Project Type:</strong> Certification Assignment / Portfolio Project</li>
+                            <li><strong>Skills Demonstrated:</strong> Data cleaning, transformation, DAX calculations, KPI creation, interactive dashboard design.</li>
+                            <li><strong>Tools Used:</strong> Power BI, Power Query Editor.</li>
+                        </ul>
+                        <a href="https://steaffonsdataanalyticsportf-my.sharepoint.com/:u:/g/personal/steaffonjones_steaffonsdataanalyticsportf_onmicrosoft_com/Ea7Tkd4ajnZKky-8jlMilVYBONHLbicdUikLtjAskAS1jQ?e=b9nVMk" target="_blank" class="text-blue-400 hover:underline mt-4 inline-block">View Project on Power BI</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-card-image-container">
+                        <svg width="320" height="180" viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="bg3" x1="0" y1="0" x2="320" y2="180" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#f7971e"/>
+                                    <stop offset="1" stop-color="#ffd200"/>
+                                </linearGradient>
+                            </defs>
+                            <rect width="320" height="180" fill="url(#bg3)"/>
+                            <g>
+                                <rect x="80" y="60" width="160" height="60" rx="20" fill="#306998" stroke="#fff" stroke-width="3"/>
+                                <circle cx="120" cy="90" r="18" fill="#ffd43b" stroke="#fff" stroke-width="2"/>
+                                <circle cx="200" cy="90" r="18" fill="#306998" stroke="#fff" stroke-width="2"/>
+                                <rect x="140" y="75" width="40" height="30" rx="10" fill="#fff" opacity="0.3"/>
+                            </g>
+                            <text x="160" y="150" font-size="18" font-family="monospace" fill="#222" text-anchor="middle" font-weight="bold">Python Programming</text>
+                            <text x="160" y="170" font-size="13" font-family="monospace" fill="#222" text-anchor="middle">Fundamentals</text>
+                        </svg>
+                    </div>
+                    <div class="project-card-content">
+                        <h3>Python Programming Fundamentals</h3>
+                        <p class="description-box">This project showcases my proficiency in Python programming, emphasizing data analysis and practical coding skills. Using a CSV file provided as input, I completed assignments and quizzes in Jupyter Notebook (part of the Anaconda environment), demonstrating end-to-end problem-solving and project execution. This project exemplifies my ability to analyze data, write clean and functional code, and deliver practical solutions. Screenshots documenting each line of code in Jupyter Notebook are available to illustrate my process and attention to detail.</p>
+                        <ul class="list-disc list-inside text-gray-400 text-sm mt-2 mb-4">
+                            <li><strong>Strong Fundamentals:</strong> Mastery of Python basics including control structures, data types, and functions.</li>
+                            <li><strong>Analytical Thinking:</strong> Ability to break down problems and implement algorithmic solutions.</li>
+                            <li><strong>Data Processing Skills:</strong> Practical experience with industry-standard libraries (pandas, NumPy).</li>
+                            <li><strong>Data Cleaning Expertise:</strong> Techniques for handling missing values and transforming datasets.</li>
+                            <li><strong>Statistical Analysis Capabilities:</strong> Implementation of mathematical operations on datasets.</li>
+                        </ul>
+                        <a href="https://github.com/Jones29S/Python-Data-Science-Fundamentals.git" target="_blank" class="text-blue-400 hover:underline mt-4 inline-block">View Project on GitHub</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-card-image-container">
+                        <svg width="320" height="180" viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="bg5" x1="0" y1="0" x2="320" y2="180" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#222"/>
+                                    <stop offset="1" stop-color="#43cea2"/>
+                                </linearGradient>
+                            </defs>
+                            <rect width="320" height="180" fill="url(#bg5)"/>
+                            <g>
+                                <rect x="120" y="60" width="80" height="60" rx="20" fill="#306998" stroke="#fff" stroke-width="3"/>
+                                <text x="160" y="100" font-size="32" font-family="monospace" fill="#ffd43b" text-anchor="middle" font-weight="bold">?</text>
+                                <rect x="140" y="75" width="40" height="30" rx="10" fill="#fff" opacity="0.2"/>
+                            </g>
+                            <text x="160" y="160" font-size="18" font-family="monospace" fill="#fff" text-anchor="middle" font-weight="bold">Python Problem Solving</text>
+                        </svg>
+                    </div>
+                    <div class="project-card-content">
+                        <h3>Python Problem Solving & Data Analysis</h3>
+                        <p class="description-box">This project showcases my proficiency in Python programming, emphasizing data analysis and practical coding skills. Using a CSV file provided as input, I completed assignments and quizzes in Jupyter Notebook (part of the Anaconda environment), demonstrating end-to-end problem-solving and project execution. This project exemplifies my ability to analyze data, write clean and functional code, and deliver practical solutions. Screenshots documenting each line of code in Jupyter Notebook are available to illustrate my process and attention to detail.</p>
+                        <ul class="list-disc list-inside text-gray-400 text-sm mt-2 mb-4">
+                            <li><strong>Data Analysis:</strong> Processed and analyzed data directly from a CSV file using Python.</li>
+                            <li><strong>Programming Fundamentals:</strong> Mastered Python concepts like loops, conditionals, functions, and recursion.</li>
+                            <li><strong>Problem-Solving:</strong> Built real-world solutions, such as: Area calculators, Temperature converters, Prime number generators, Palindrome checkers, Fibonacci sequence generators.</li>
+                            <li><strong>Documentation:</strong> Used comments and docstrings for clear, maintainable code.</li>
+                            <li><strong>Debugging:</strong> Troubleshot and optimized code effectively.</li>
+                            <li><strong>Highlights from Assignments:</strong> Created programs to calculate, convert, and validate inputs dynamically. Visualized step-by-step coding process in Jupyter Notebook for transparency. Applied Python’s for and if statements for tasks like pyramid patterns and multiplication tables. Implemented reusable functions for tasks like factorial calculations and palindrome checks.</li>
+                            <li><strong>Quiz Achievements:</strong> Correctly answered Python fundamentals (e.g., data types, scope, control flow). Showcased knowledge of Python standards (e.g., PEP) and best practices. Demonstrated practical applications of built-in functions like len() and print().</li>
+                        </ul>
+                        <a href="https://github.com/Jones29S/Building-Blocks-of-Python-Mastering-Syntax-Algorithms-and-Loops.git" target="_blank" class="text-blue-400 hover:underline mt-4 inline-block">View Project on GitHub</a>
+                    </div>
+                </div>
+
+                </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-16 bg-gray-800">
+        <div class="container">
+            <h2 class="text-4xl font-bold text-center text-blue-400 mb-10">Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-gray-300">
+                <div class="bg-gray-700 p-8 rounded-lg shadow-lg flex flex-col items-center text-center">
+                    <h3 class="text-2xl font-semibold text-blue-300 mb-4">Data Analysis & Reporting</h3>
+                    <p class="mb-4">Transform raw data into clear, actionable insights with comprehensive reports and visualizations.</p>
+                    <ul class="list-disc list-inside mb-6 text-left">
+                        <li>Exploratory Data Analysis</li>
+                        <li>Statistical Modeling</li>
+                        <li>Dashboard Creation (Tableau, Power BI)</li>
+                    </ul>
+                    <a href="#contact" class="btn-primary">Inquire Now</a>
+                </div>
+
+                <div class="bg-gray-700 p-8 rounded-lg shadow-lg flex flex-col items-center text-center">
+                    <h3 class="text-2xl font-semibold text-blue-300 mb-4">Web Development (Static Sites)</h3>
+                    <p class="mb-4">Build fast, secure, and responsive static websites for your business or personal brand.</p>
+                    <ul class="list-disc list-inside mb-6 text-left">
+                        <li>Custom HTML/CSS/JS</li>
+                        <li>Responsive Design</li>
+                        <li>Performance Optimization</li>
+                    </ul>
+                    <a href="#contact" class="btn-primary">Inquire Now</a>
+                </div>
+
+                <div class="bg-gray-700 p-8 rounded-lg shadow-lg flex flex-col items-center text-center">
+                    <h3 class="text-2xl font-semibold text-blue-300 mb-4">Consultation & Strategy</h3>
+                    <p class="mb-4">Expert guidance to help you define your data strategy and project roadmap.</p>
+                    <ul class="list-disc list-inside mb-6 text-left">
+                        <li>Project Scoping & Planning</li>
+                        <li>Technology Stack Recommendations</li>
+                        <li>Data Governance Advice</li>
+                    </ul>
+                    <a href="#contact" class="btn-primary">Book a Session</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="connections" class="py-16 bg-gray-800">
+        <div class="container">
+            <h2 class="text-4xl font-bold text-center text-blue-400 mb-10">My Ecosystem & Connections</h2>
+            <p class="text-center text-gray-300 mb-8">I leverage a variety of tools and languages to bring projects to life. Connect with me on these platforms or explore my work:</p>
+            <div class="flex flex-wrap justify-center gap-8">
+                <a href="https://github.com/steaffon" target="_blank" class="flex flex-col items-center p-4 bg-gray-700 rounded-lg shadow-md hover:bg-gray-600 transition duration-300">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/github.svg" alt="GitHub" class="w-12 h-12 mb-2 filter invert">
+                    <span class="text-blue-300 font-semibold">GitHub</span>
+                </a>
+                <a href="https://anaconda.cloud/" target="_blank" class="flex flex-col items-center p-4 bg-gray-700 rounded-lg shadow-md hover:bg-gray-600 transition duration-300">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/anaconda.svg" alt="Anaconda" class="w-12 h-12 mb-2 filter invert">
+                    <span class="text-blue-300 font-semibold">Anaconda</span>
+                </a>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" class="flex flex-col items-center p-4 bg-gray-700 rounded-lg shadow-md hover:bg-gray-600 transition duration-300">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/javascript.svg" alt="JavaScript" class="w-12 h-12 mb-2">
+                    <span class="text-blue-300 font-semibold">JavaScript</span>
+                </a>
+                <a href="https://www.python.org/" target="_blank" class="flex flex-col items-center p-4 bg-gray-700 rounded-lg shadow-md hover:bg-gray-600 transition duration-300">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/python.svg" alt="Python" class="w-12 h-12 mb-2">
+                    <span class="text-blue-300 font-semibold">Python</span>
+                </a>
+                <a href="https://linkedin.com/in/steaffonjones" target="_blank" class="flex flex-col items-center p-4 bg-gray-700 rounded-lg shadow-md hover:bg-gray-600 transition duration-300">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/linkedin.svg" alt="LinkedIn" class="w-12 h-12 mb-2">
+                    <span class="text-blue-300 font-semibold">LinkedIn</span>
+                </a>
+                <a href="https://www.r-project.org/" target="_blank" class="flex flex-col items-center p-4 bg-gray-700 rounded-lg shadow-md hover:bg-gray-600 transition duration-300">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/r.svg" alt="R Language" class="w-12 h-12 mb-2">
+                    <span class="text-blue-300 font-semibold">R Language</span>
+                </a>
+                <a href="https://www.mysql.com/" target="_blank" class="flex flex-col items-center p-4 bg-gray-700 rounded-lg shadow-md hover:bg-gray-600 transition duration-300">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/mysql.svg" alt="MySQL" class="w-12 h-12 mb-2 filter invert">
+                    <span class="text-blue-300 font-semibold">MySQL</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-16 bg-gray-900">
+        <div class="container">
+            <h2 class="text-4xl font-bold text-center text-blue-400 mb-10">Contact Me Form</h2>
+
+            <div class="bg-gray-800 p-8 rounded-lg shadow-lg max-w-2xl mx-auto">
+                <p class="text-gray-300 mb-6">Feel free to reach out to me directly for collaborations, inquiries, or just to say hello!</p>
+                <ul class="space-y-3 text-gray-300 mb-6">
+                    <li><strong>Email:</strong> <a href="mailto:steaffonjones@gmail.com" class="text-blue-400 hover:underline">steaffonjones@gmail.com</a></li>
+                    <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/steaffonjones" target="_blank" class="text-blue-400 hover:underline">linkedin.com/in/steaffonjones</a></li>
+                </ul>
+                </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 py-8 text-center text-gray-500 text-sm">
+        <div class="container">
+            <p>© <span id="currentYear"></span> DATA WITH F&F. All rights reserved.</p>
+            <p>Built with <span class="text-red-500">♥</span> and Visual Studio Code.</p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for dynamic elements (removed customization)
+        document.addEventListener('DOMContentLoaded', () => {
+            // Set current year in footer
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+        });
+    </script>
+</body>
+</html>

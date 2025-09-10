@@ -1,0 +1,38 @@
+roi-flask-app/
+└── templates/
+    └── analytics.html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ROI Analytics</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>📈 ROI Analytics Dashboard</h1>
+    <p><strong>Total Revenue:</strong> ${{ total_revenue }}</p>
+    <p><strong>Top Platform:</strong> {{ top_platform }}</p>
+    <p><strong>Average Engagement:</strong> {{ avg_engagement }}%</p>
+
+    <h2>Recent Entries</h2>
+    <table border="1">
+        <tr>
+            <th>Date</th>
+            <th>Platform</th>
+            <th>Revenue</th>
+            <th>Followers</th>
+            <th>Engagement</th>
+        </tr>
+        {% for row in data %}
+        <tr>
+            <td>{{ row.Date }}</td>
+            <td>{{ row.Platform }}</td>
+            <td>${{ row.Revenue }}</td>
+            <td>{{ row.Followers }}</td>
+            <td>{{ row.Engagement }}%</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <a href="/">Add Another Entry</a>
+</body>
+</html>

@@ -1,0 +1,99 @@
+Of course, Steaffon—thanks for the thoughtful refinement. I’ve added a commonly used **data collection tool** to the final Skills column: **Qualtrics**, a platform often used for surveys, feedback, and research analytics. Here's your final, sharp résumé, ready to copy into a document editor for PDF export:
+
+---
+
+# **Steaffon Jones** – Data Analyst  
+📞 346-434-5803 | ✉️ steaonfjonjones@gmail.com | 🌐 [Portfolio](https://jones29s.github.io/)
+
+---
+
+## **Profile**  
+Seasoned Data Analyst with a record of implementing advanced analytics, machine learning, and automation to drive operational excellence. Skilled in SQL, Python, PyTorch, and AI tools. Expert in developing dynamic dashboards using Power BI and Tableau. Proven success in optimizing training programs, improving system workflows, and managing large-scale rollouts. Adept at translating complex datasets into actionable strategies across diverse business sectors.
+
+---
+
+## **Professional Experience**
+
+### **Freelance Management Analyst** – Private Startups (LLCs)  
+*Jul 2024 – Present*  
+- Launched onboarding and training programs for startup teams focused on digital transformation.  
+- Built scalable Python and Power BI workflows with integrated AI solutions.  
+- Consulted on revenue cycle strategies, productivity tracking, and business growth analytics.  
+- Developed streamlined communication protocols and delivered ongoing tech support.  
+- Applied machine learning models to generate predictive insights.
+
+### **Management Analyst** – San Mateo County  
+*Jun 2023 – Jul 2024*  
+- Orchestrated full training readiness from 0% to 100% for system rollout.  
+- Evaluated training metrics to improve system adoption and staff engagement.  
+- Managed patient records within Epic Ambulatory and supported clinical documentation processes.
+
+### **Federal Learning Analyst** – MedSys Group  
+*Mar 2022 – May 2023*  
+- Led implementation projects at Penn State and Kentucky medical facilities.  
+- Supported VA Cerner rollout across Ambulatory and Mental Health units.  
+- Achieved perfect 100 training engagement score and earned Oracle Cerner certifications.  
+- Enhanced workflows and communication within clinical teams.
+
+### **Data Analyst** – Texas Workforce Solutions  
+*Jul 2021 – Mar 2022*  
+- Automated career services documentation with standardized workflows.  
+- Streamlined real-time decision support using employment data insights.  
+- Improved team collaboration with integrated messaging and systems.
+
+### **IT Setup Analyst (Intern)** – Preventious Solutions  
+*Dec 2021 – Feb 2022*  
+- Implemented unified EHR systems to elevate patient safety and experience.  
+- Enabled personalized care strategies by optimizing data integration.  
+- Automated administrative procedures for improved operational flow.
+
+### **Epic Help Desk** – Remote  
+*Apr 2021 – Jun 2021*  
+- Resolved workflow issues and technical support for Epic Ambulatory.  
+- Reduced patient-related concerns by 20% through proactive troubleshooting.  
+- Enhanced scheduling and system performance.
+
+### **Operations Analysis Supervisor** – Walmart  
+*Mar 2020 – Feb 2021*  
+- Analyzed staffing and optimized scheduling efficiency across departments.  
+- Generated reports and tracked KPIs to support strategic decisions.  
+- Automated resource allocation for smoother business operations.
+
+### **Consultant** – Hudson Regional System (Cerner)  
+*Aug 2020 – Nov 2020*  
+- Provided go-live support in emergency department settings.  
+- Supported night staff with system documentation and issue resolution.  
+- Collaborated with medical teams and addressed Cerner-related software challenges.
+
+### **Consultant** – Capital Health Systems  
+*Jun 2020 – Jul 2020*  
+- Delivered elbow support for EMR system launch.  
+- Led reporting and charting initiatives to improve operational workflows.  
+- Guided staff on data analysis and business development processes.
+
+---
+
+## **Education**
+
+**Certification – Data Analytics with a Focus on AI Solutions**  
+California Institute of Career And Development – San Jose  
+*Completed Feb 2025*
+
+**Bachelor of Science**  
+Texas Southern University – Houston  
+*May 2018*
+
+---
+
+## **Skills**
+
+| Technical Skills       | Tools & Platforms     | Optimization & Management   |
+|--------------------------|---------------------------|------------------------------|
+| SQL              | Excel, Power BI, Tableau  | Workflow Efficiency |
+| Python, PyTorch     | HTML, CSS, JavaScript  | Training Programs |
+| Machine Learning, AI  | Microsoft Word, PowerPoint | Project Management |
+| Epic Systems, Oracle Cerner Systems | Qualtrics           | Business Process Design |
+
+---
+
+This version reflects your full capabilities, Steaffon—it’s data-savvy, leadership-forward, and ready to impress. If you ever want help turning this into a cover letter, portfolio showcase, or even a personal site, I’m here for it 💻📊✨
